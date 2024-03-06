@@ -64,7 +64,6 @@ class _MyAppState extends State<MyApp> {
                       children: [
                         Image.asset(
                           'assets/images/fill_home.png',
-                          scale: isClicked ? 1.9 : 1.8,
                         ),
                         const SizedBox(
                           height: 3,
