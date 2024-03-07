@@ -34,6 +34,34 @@ class _MyAppState extends State<MyApp> {
     });
   }
 
+  void goMenu(BuildContext context) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => const MenuPage()),
+    );
+  }
+
+  void goAI() {
+    print("go AI");
+    setState(() {
+      isClicked = !isClicked;
+    });
+  }
+
+  void gocard() {
+    print("go AI");
+    setState(() {
+      isClicked = !isClicked;
+    });
+  }
+
+  void gomy() {
+    print("go AI");
+    setState(() {
+      isClicked = !isClicked;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -43,10 +71,7 @@ class _MyAppState extends State<MyApp> {
           color: Color(0xFF202020),
           height: 87,
           child: Padding(
-            padding: const EdgeInsets.only(
-              top: 5,
-              bottom: 20,
-            ),
+            padding: const EdgeInsets.only(),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -56,17 +81,14 @@ class _MyAppState extends State<MyApp> {
                     onPressed: goHome,
                     style: const ButtonStyle(
                       backgroundColor:
-                          MaterialStatePropertyAll(Colors.transparent),
-                      shadowColor: MaterialStatePropertyAll(Colors.transparent),
+                          MaterialStatePropertyAll(Color(0xFF202020)),
+                      shadowColor: MaterialStatePropertyAll(Color(0xFF202020)),
                     ),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Image.asset(
                           'assets/images/fill_home.png',
-                        ),
-                        const SizedBox(
-                          height: 3,
                         ),
                         const Text(
                           'home',
@@ -83,28 +105,63 @@ class _MyAppState extends State<MyApp> {
                     ),
                   ),
                 ),
+                Builder(
+                  builder: (newContext) => Flexible(
+                    // 새로운 context를 사용하여 goMenu 호출
+                    flex: 1,
+                    child: ElevatedButton(
+                      onPressed: () => goMenu(newContext),
+                      style: const ButtonStyle(
+                        backgroundColor:
+                            MaterialStatePropertyAll(Color(0xFF202020)),
+                        shadowColor:
+                            MaterialStatePropertyAll(Color(0xFF202020)),
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Image.asset(
+                            'assets/images/shape.png',
+                          ),
+                          const Text(
+                            'menu',
+                            style: TextStyle(
+                              fontFamily: 'Pretendard', // 원하는 폰트로 변경
+                              fontSize: 12, // 폰트 크기를 12픽셀로 변경
+                              fontWeight: FontWeight.w400, // 폰트의 굵기를 400으로 변경
+                              letterSpacing: 0, // 글자 간격을 0으로 설정
+                              color: Color(0xFFFFFFFF), // 텍스트 색상을 흰색으로 변경
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
                 Flexible(
                   flex: 1,
                   child: ElevatedButton(
-                    onPressed: goHome,
+                    onPressed: goAI,
                     style: const ButtonStyle(
                       backgroundColor:
-                          MaterialStatePropertyAll(Colors.transparent),
-                      shadowColor: MaterialStatePropertyAll(Colors.transparent),
+                          MaterialStatePropertyAll(Color(0xFF202020)),
+                      shadowColor: MaterialStatePropertyAll(Color(0xFF202020)),
                     ),
                     child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Image.asset(
-                          'assets/images/recipe.png',
-                          scale: 1.8,
-                        ),
-                        const SizedBox(
-                          height: 3,
+                          'assets/images/AI.png',
                         ),
                         const Text(
-                          '레시피',
+                          'AI',
                           style: TextStyle(
-                            color: Colors.black,
+                            fontFamily: 'Pretendard', // 원하는 폰트로 변경
+                            fontSize: 12, // 폰트 크기를 12픽셀로 변경
+                            fontWeight: FontWeight.w400, // 폰트의 굵기를 400으로 변경
+                            height: 22 / 12, // 줄간격을 픽셀 크기에 맞게 조정
+                            letterSpacing: 0, // 글자 간격을 0으로 설정
+                            color: Color(0xFFFFFFFF), // 텍스트 색상을 흰색으로 변경
                           ),
                         ),
                       ],
@@ -114,25 +171,27 @@ class _MyAppState extends State<MyApp> {
                 Flexible(
                   flex: 1,
                   child: ElevatedButton(
-                    onPressed: goHome,
+                    onPressed: gocard,
                     style: const ButtonStyle(
                       backgroundColor:
-                          MaterialStatePropertyAll(Colors.transparent),
-                      shadowColor: MaterialStatePropertyAll(Colors.transparent),
+                          MaterialStatePropertyAll(Color(0xFF202020)),
+                      shadowColor: MaterialStatePropertyAll(Color(0xFF202020)),
                     ),
                     child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Image.asset(
-                          'assets/images/zoom_in.png',
-                          scale: 1.8,
-                        ),
-                        const SizedBox(
-                          height: 3,
+                          'assets/images/Union.png',
                         ),
                         const Text(
-                          '검색',
+                          'card',
                           style: TextStyle(
-                            color: Colors.black,
+                            fontFamily: 'Pretendard', // 원하는 폰트로 변경
+                            fontSize: 12, // 폰트 크기를 12픽셀로 변경
+                            fontWeight: FontWeight.w400, // 폰트의 굵기를 400으로 변경
+                            height: 22 / 12, // 줄간격을 픽셀 크기에 맞게 조정
+                            letterSpacing: 0, // 글자 간격을 0으로 설정
+                            color: Color(0xFFFFFFFF), // 텍스트 색상을 흰색으로 변경
                           ),
                         ),
                       ],
@@ -142,53 +201,27 @@ class _MyAppState extends State<MyApp> {
                 Flexible(
                   flex: 1,
                   child: ElevatedButton(
-                    onPressed: goHome,
+                    onPressed: gomy,
                     style: const ButtonStyle(
                       backgroundColor:
-                          MaterialStatePropertyAll(Colors.transparent),
-                      shadowColor: MaterialStatePropertyAll(Colors.transparent),
+                          MaterialStatePropertyAll(Color(0xFF202020)),
+                      shadowColor: MaterialStatePropertyAll(Color(0xFF202020)),
                     ),
                     child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Image.asset(
-                          'assets/images/person.png',
-                          scale: 1.8,
-                        ),
-                        const SizedBox(
-                          height: 3,
+                          'assets/images/my.png',
                         ),
                         const Text(
-                          '프로필',
+                          'my',
                           style: TextStyle(
-                            color: Colors.black,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                Flexible(
-                  flex: 1,
-                  child: ElevatedButton(
-                    onPressed: goHome,
-                    style: const ButtonStyle(
-                      backgroundColor:
-                          MaterialStatePropertyAll(Colors.transparent),
-                      shadowColor: MaterialStatePropertyAll(Colors.transparent),
-                    ),
-                    child: Column(
-                      children: [
-                        Image.asset(
-                          'assets/images/home.png', // 새로운 아이콘 이미지 경로
-                          scale: 1.8,
-                        ),
-                        const SizedBox(
-                          height: 3,
-                        ),
-                        const Text(
-                          '다른 버튼', // 버튼에 표시될 텍스트
-                          style: TextStyle(
-                            color: Colors.black,
+                            fontFamily: 'Pretendard', // 원하는 폰트로 변경
+                            fontSize: 12, // 폰트 크기를 12픽셀로 변경
+                            fontWeight: FontWeight.w400, // 폰트의 굵기를 400으로 변경
+                            height: 22 / 12, // 줄간격을 픽셀 크기에 맞게 조정
+                            letterSpacing: 0, // 글자 간격을 0으로 설정
+                            color: Color(0xFFFFFFFF), // 텍스트 색상을 흰색으로 변경
                           ),
                         ),
                       ],
@@ -351,6 +384,22 @@ class _MyAppState extends State<MyApp> {
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class MenuPage extends StatelessWidget {
+  const MenuPage({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Menu Page'),
+      ),
+      body: Center(
+        child: Text('This is the Menu Page'),
       ),
     );
   }
