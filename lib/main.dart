@@ -236,63 +236,46 @@ class _MyAppState extends State<MyApp> {
           onTap: closeSearch,
           child: Column(
             children: [
-              Flexible(
-                flex: 1,
-                child: Container(
-                  decoration:
-                      BoxDecoration(color: Colors.grey.withOpacity(0.75)),
-                  child: Padding(
-                    padding: const EdgeInsets.only(left: 38, right: 28),
-                    child: Column(
-                      children: [
-                        Center(
-                          child: Padding(
-                            padding: const EdgeInsets.only(
-                              top: 75,
-                            ),
-                            child: TextField(
-                              readOnly: !search,
-                              cursorColor: Colors.white.withOpacity(0.2),
-                              cursorHeight: 22,
-                              onTap: openSearch,
-                              style: const TextStyle(
-                                textBaseline: TextBaseline.alphabetic,
-                                fontSize: 20,
-                                color: Colors.white,
-                              ),
-                              decoration: InputDecoration(
-                                contentPadding: const EdgeInsets.only(
-                                  left: 30,
-                                ),
-                                filled: search,
-                                fillColor: Colors.black.withOpacity(
-                                  0.15,
-                                ),
-                                suffixIcon: const Padding(
-                                  padding: EdgeInsets.only(
-                                    right: 20,
-                                  ),
-                                  child: Icon(
-                                    Icons.search,
-                                    color: Colors.white,
-                                    size: 30,
-                                  ),
-                                ),
-                                border: OutlineInputBorder(
-                                  borderSide: BorderSide.none,
-                                  borderRadius: BorderRadius.circular(
-                                    35.0,
-                                  ),
-                                ),
-                              ),
+              Container(
+                height: 190, // 높이를 190px로 설정
+                decoration: BoxDecoration(color: Colors.grey.withOpacity(0.75)),
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 50, left: 20, right: 20),
+                  child: Column(
+                    mainAxisAlignment:
+                        MainAxisAlignment.start, // Column 내 요소들을 시작 부분에서 정렬
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          IconButton(
+                            icon: Icon(Icons.arrow_back, color: Colors.white),
+                            onPressed: () {
+                              print("back button tapped!");
+                            },
+                          ),
+                          Text(
+                            "MENU",
+                            style: TextStyle(
+                              fontSize: 24,
+                              color: Colors.white,
                             ),
                           ),
-                        ),
-                      ],
-                    ),
+                          IconButton(
+                            icon: Icon(Icons.search, color: Colors.white),
+                            onPressed: () {
+                              print("Search button tapped!");
+                            },
+                          ),
+                        ],
+                      ),
+                    ],
                   ),
                 ),
               ),
+              Container(
+                  height: 2,
+                  decoration: const BoxDecoration(color: Colors.black)),
               Flexible(
                 flex: 1,
                 child: Container(
