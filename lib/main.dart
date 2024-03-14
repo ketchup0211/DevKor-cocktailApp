@@ -318,6 +318,26 @@ class _MyAppState extends State<MyApp> {
                   decoration: const BoxDecoration(
                     color: Color(0xFFC7C7C7),
                   )),
+              Container(
+                height: 40,
+                decoration: const BoxDecoration(
+                  color: Colors.white,
+                ),
+                child: Align(
+                  alignment: Alignment.centerRight, // 아이콘을 오른쪽 중앙에 배치
+                  child: Padding(
+                    padding:
+                        const EdgeInsets.only(right: 20), // 오른쪽에 10픽셀 패딩 추가
+                    child: IconButton(
+                      icon: const Icon(Icons.filter_list),
+                      onPressed: () {
+                        print("Filter icon tapped!");
+                      },
+                      color: Colors.black,
+                    ),
+                  ),
+                ),
+              ),
               Flexible(
                 flex: 1,
                 child: Container(
