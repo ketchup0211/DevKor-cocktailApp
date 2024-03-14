@@ -237,8 +237,8 @@ class _MyAppState extends State<MyApp> {
           child: Column(
             children: [
               Container(
-                height: 190, // 높이를 190px로 설정
-                decoration: BoxDecoration(color: Colors.grey.withOpacity(0.75)),
+                height: 170,
+                decoration: BoxDecoration(color: Colors.white),
                 child: Padding(
                   padding: const EdgeInsets.only(top: 50, left: 20, right: 20),
                   child: Column(
@@ -249,7 +249,8 @@ class _MyAppState extends State<MyApp> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           IconButton(
-                            icon: Icon(Icons.arrow_back, color: Colors.white),
+                            icon: Icon(Icons.arrow_back,
+                                color: Colors.black, size: 28.0),
                             onPressed: () {
                               print("back button tapped!");
                             },
@@ -257,25 +258,66 @@ class _MyAppState extends State<MyApp> {
                           Text(
                             "MENU",
                             style: TextStyle(
-                              fontSize: 24,
-                              color: Colors.white,
-                            ),
+                                fontSize: 24,
+                                color: Colors.black,
+                                fontWeight: FontWeight.w600),
                           ),
                           IconButton(
-                            icon: Icon(Icons.search, color: Colors.white),
+                            icon: Icon(Icons.search,
+                                color: Colors.black, size: 28.0),
                             onPressed: () {
                               print("Search button tapped!");
                             },
                           ),
                         ],
                       ),
+                      SizedBox(height: 30), // 버튼 사이의 간격을 위한 공간
+                      // TextButton들을 Row로 묶기
+                      Padding(
+                        padding: const EdgeInsets.only(left: 30, right: 30),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            TextButton(
+                              onPressed: () {
+                                // 첫 번째 텍스트 버튼의 기능
+                                print("First button tapped!");
+                              },
+                              child: Text(
+                                "전체 메뉴",
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 17, // 텍스트 사이즈 설정
+                                  fontWeight: FontWeight.w600, // 텍스트 굵기 설정
+                                ),
+                              ),
+                            ),
+                            TextButton(
+                              onPressed: () {
+                                // 두 번째 텍스트 버튼의 기능
+                                print("Second button tapped!");
+                              },
+                              child: Text(
+                                "나만의 메뉴",
+                                style: TextStyle(
+                                  color: Color(0xFFBBBBBB),
+                                  fontSize: 17, // 텍스트 사이즈 설정
+                                  fontWeight: FontWeight.w600, // 텍스트 굵기 설정
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      )
                     ],
                   ),
                 ),
               ),
               Container(
-                  height: 2,
-                  decoration: const BoxDecoration(color: Colors.black)),
+                  height: 3,
+                  decoration: const BoxDecoration(
+                    color: Color(0xFFC7C7C7),
+                  )),
               Flexible(
                 flex: 1,
                 child: Container(
